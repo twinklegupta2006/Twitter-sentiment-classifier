@@ -61,10 +61,3 @@ The data comes from the Kaggle ["Twitter Entity Sentiment Analysis"](https://www
 
 It's not included in this repo. You only need it if you want to retrain the models or reproduce the benchmark/evaluation scripts — not to run the Streamlit demo. Download `twitter_training.csv` and place it at `data/twitter_training.csv`.
 
-## Testing
-
-```bash
-python -m pytest -v
-```
-
-41 tests currently pass.
