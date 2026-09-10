@@ -41,8 +41,6 @@ streamlit run app.py
 - `src/` — ML and evaluation code (data loading, preprocessing, models, inference)
 - `scripts/` — training, evaluation, benchmarking, and prediction scripts
 - `artifacts/` — saved model artifacts used by the app
-- `results/` — evaluation results and plots
-- `tests/` — automated tests
 - `configs/` — configuration (`config.yaml`)
 
 ## Setup
