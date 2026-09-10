@@ -1,0 +1,12 @@
+# Minimal, correctness-focused lint configuration for CI.
+# F  = Pyflakes: unused imports/variables, undefined names, etc. (real bugs)
+# E9 = pycodestyle: syntax errors
+# Deliberately excludes stylistic/import-sorting/pyupgrade/etc. rules --
+# not worth CI time or unrelated diffs on an already-working codebase.
+exclude = [
+    ".venv", ".git", "__pycache__", ".pytest_cache", ".ruff_cache",
+    "artifacts", "results", "data", "glove", "models",
+]
+
+[lint]
+select = ["F", "E9"]

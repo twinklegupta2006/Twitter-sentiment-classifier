@@ -1,0 +1,50 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# Large / downloaded assets — not committed, see README for how to obtain them
+glove/
+
+# Raw dataset: sourced from a third-party Kaggle dataset whose exact
+# redistribution terms we have not independently verified -- kept local-only
+# rather than assuming redistribution is allowed. See README for how to
+# download and place it. Not needed to run the Streamlit demo/CLI (those
+# only need the committed production artifacts below); only needed if you
+# want to retrain or regenerate results from scratch.
+data/twitter_training.csv
+
+# Generated LSTM artifacts: large, reproducible via `python scripts/train.py`
+# (needs the GloVe download + ~20 min on CPU) -- not committed. The LSTM
+# baseline's CLI/tests work locally once trained; CI skips the
+# artifact-dependent LSTM tests gracefully without them (see README).
+artifacts/*.keras
+artifacts/*.h5
+artifacts/tokenizer.json
+
+# Unused baseline from the Phase 2 benchmark (Logistic Regression scored
+# lower than the selected SVM) -- not loaded by anything at runtime.
+artifacts/baselines/tfidf_logistic_regression.pkl
+
+# Experimental artifacts from the preprocessing-normalization experiment
+# (negative result, not adopted) -- its reports/plots are kept, its raw
+# model/vectorizer binaries are not.
+results/preprocessing_experiment/*.pkl
+
+# NOTE: artifacts/label_encoder.pkl, artifacts/baselines/tfidf_vectorizer.pkl,
+# and artifacts/baselines/tfidf_linear_svm.pkl are the PRODUCTION artifacts
+# app.py / the CLI load -- these ARE committed (small, ~5MB total) so
+# `streamlit run app.py` works immediately after a fresh clone.
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
